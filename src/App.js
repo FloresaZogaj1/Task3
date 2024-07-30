@@ -1,23 +1,56 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
 
 function App() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const togglePopup = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button className="show-popup-btn" onClick={togglePopup}>Show Popup</button>
+
+      {isOpen && (
+        <div className="popup-backdrop" onClick={togglePopup}>
+          <div className="popup-content" onClick={(e) => e.stopPropagation()}>
+            <h2>Theme Color</h2>
+            <h3>Change Theme</h3>
+            <ul>
+              <li>
+                <span>Font Color</span>
+                <input type="text" defaultValue="#444444" />
+                <input type="color" defaultValue="#444444" />
+              </li>
+              <li>
+                <span>Background Color</span>
+                <input type="text" defaultValue="#FFFFFF" />
+                <input type="color" defaultValue="#FFFFFF" />
+              </li>
+              <li>
+                <span>Button Color</span>
+                <input type="text" defaultValue="#2072EF" />
+                <input type="color" defaultValue="#2072EF" />
+              </li>
+              <li>
+                <span>Button Border Color</span>
+                <input type="text" defaultValue="#2072EF" />
+                <input type="color" defaultValue="#2072EF" />
+              </li>
+              <li>
+                <span>Buttons Mouseover Color</span>
+                <input type="text" defaultValue="#0053D1" />
+                <input type="color" defaultValue="#0053D1" />
+              </li>
+            </ul>
+            <div className="popup-actions">
+              <button className="cancel-btn" onClick={togglePopup}>Cancel</button>
+              <button className="save-btn" onClick={togglePopup}>Save</button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

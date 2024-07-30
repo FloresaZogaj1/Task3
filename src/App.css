@@ -1,38 +1,100 @@
 .App {
   text-align: center;
+  padding: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.show-popup-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.popup-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.popup-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+  position: relative;
+  width: 400px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.popup-content h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  margin-right: 200px;
+  color: black;
+}
+
+.popup-content h3 {
+  padding-left: 30px;
+  margin-left: 180px;
+  color: #2072EF;
+  margin-bottom: 80px;
+}
+
+.popup-content ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.popup-content ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ccc; 
+  padding-bottom: 10px; 
+}
+
+.popup-content ul li span {
+  flex: 1;
+  margin-right: 20px; 
+}
+
+.popup-content ul li input[type="color"],
+.popup-content ul li input[type="text"] {
+  flex: 1;
+  margin-left: 10px;
+}
+
+.popup-content ul li input[type="text"] {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.popup-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.cancel-btn, .save-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+
+.cancel-btn {
+  background-color: #ccc;
+  margin-right: 10px;
+}
+
+.save-btn {
+  background-color: #2072EF;
+  color: #fff;
 }
