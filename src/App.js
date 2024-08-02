@@ -10,13 +10,17 @@ function App() {
 
   return (
     <div className="App">
-      <button className="show-popup-btn" onClick={togglePopup}>Show Popup</button>
+      <button className="show-popup-btn" onClick={togglePopup}>
+        show popup
+      </button>
 
       {isOpen && (
         <div className="popup-backdrop" onClick={togglePopup}>
           <div className="popup-content" onClick={(e) => e.stopPropagation()}>
-            <h2>Theme Color</h2>
-            <h3>Change Theme</h3>
+            <div className="header">
+              <h2>Theme Color</h2>
+              <h3>Change Theme</h3>
+            </div>
             <ul>
               <li>
                 <span>Font Color</span>
@@ -45,8 +49,12 @@ function App() {
               </li>
             </ul>
             <div className="popup-actions">
-              <button className="cancel-btn" onClick={togglePopup}>Cancel</button>
-              <button className="save-btn" onClick={togglePopup}>Save</button>
+              <button className="cancel-btn" onClick={togglePopup}>
+                Cancel
+              </button>
+              <button className="save-btn" onClick={togglePopup}>
+                Save
+              </button>
             </div>
           </div>
         </div>
